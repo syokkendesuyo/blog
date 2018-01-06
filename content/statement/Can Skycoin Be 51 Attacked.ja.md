@@ -1,5 +1,5 @@
 +++
-title = "Can Skycoin be 51% Attacked?"
+title = "Skycoinは51%の攻撃を受けることができますか？"
 tags = [
     "Statement",
     "Obelisk",
@@ -12,9 +12,9 @@ categories = [
 ]
 +++
 
-*This is an archived post from the bitcointalks thread on February 16 2015*
+*これは2015年2月16日のbitcointalksスレッドからアーカイブされた投稿です*
 
-> Quote from: **iamback** on February 16, 2015, 09:28:38 AM
+> **iamback** からの引用: 2015年2月16日 午前 09時28分38秒
 
 > A non-PoW consensus is DOA, because there isn't enough time to thresh out the
 issues and trust it before the global economy begins to collapse in 2016.
@@ -79,50 +79,44 @@ and coin balances will be completely unchanged.
 
 Skycoin:
 
-- fixes existing problems with Bitcoin
-- future-proofs Bitcoin
-- eliminates the death spiral conditions that Bitcoin has engineered in
+- Bitcoinにおける既存の問題を修正
+- 未来を保証するBitcoin
+- Bitcoinが設計した負のスパイラル状態を解消
 
-It is 100% true. There are severe tradeoffs. For example, faster
-consensus times for Skycoin-type relational consensus means that a smaller
-number of nodes are required to DDoS the network. However, people can react
-and remove the nodes from their trust lists.
+それは100％真実です。しかしこれには重大なトレードオフがあります。
+たとえば、Skycoinタイプのリレーショナルコンセンサスのコンセンサス時間が短縮されるということは、
+ネットワークのDDoSに必要なノード数が少なくなることを意味します。
+しかし人々が反応し、その信頼リストからノードを削除することができます。
 
-There will be issues and they will need to be worked out.
+これには問題があり、解決する必要があります。
 
-## Skycoin Transaction Structure
+## Skycoinトランザクションの構造
 
 https://github.com/skycoin/skycoin/blob/master/src/coin/transactions.go
 
-A Skycoin transaction is:
+Skycoinのトランザクションは次のとおりです:
 
-1) A list of output hashes, being spent
-2) A list of signatures authorizing the outputs to be spent (signature of hash
-   of inner part of transaction)
-3) A list of outputs to be created
+1) 出力ハッシュのリスト
+2) 出力が使用されることを承認する署名のリスト（トランザクションの内部部分のハッシュの署名）
+3) 作成する出力のリスト
 
-Coins cannot be created or destroyed. The number of coins in has to equal
-number of coins out. Transaction fees are in "coinhours".
+コインは作成も破棄もできません。コインの枚数は出力されるコインの枚数と同じでなければなりません。取引手数料は「コインハウス」(coinhours)に収められています。
 
-## Skycoin supports Coinjoin natively
+## SkycoinはネイティブにCoinjoinをサポート
 
-There is no difference between normal and coinjoin transactions.
+通常取引とCoinjoinトランザクションに違いはありません。
 
-- Two people choose the outputs they want to spend, the outputs they want to
-  create, send to remote server.
-- The server creates a transaction and scrambles orders of outputs in/out.
-  Then sends it to each person
-- Each person sends the signatures for their outputs to the server
-- The coinjoin server injects the transaction into the network
+- 2人は、使いたいアウトプット、作成したいアウトプット、リモートサーバーに送るアウトプットを選択する。
+- サーバーはトランザクションを作成し、出力の順序をスクラブルします。そしてそれを各人に送信する。
+- 各人は、その出力のための署名をサーバに送る。
+- Coinjoinサーバは、トランザクションをネットワークに流す。
 
-- The coinjoin server cannot steal the coins
-- Only the coinjoin server knows how many people are involved (1, 2, 4?)
-- Only the coinjoin server knows which outptus belong to who
-- There is no difference between coinjoin and normal transactions (they look
-  exactly the same)
+- Coinjoinサーバーはコインを盗むことはできません。
+- Coinjoinサーバーだけが、何人の人が関わっているのかを把握できます。(1, 2, 4?)
+- Coinjoinサーバだけがどのアウトルータスが誰に属しているかを把握できます。
+- Coinjoinと通常のトランザクションとの間に違いはありません。(それらはまったく同じように見えます)
 
-The signature in the `i`th slot is for the address owning the `i`th output. The
-inner hash of the transaction is hashed with hash of output being spent, then
-this is signed with the private key owning the output.
+i番目のスロットの署名は i番目の出力を所有するアドレス用です。
+トランザクションの内部ハッシュは、出力のハッシュを使用してハッシュされ、次にこれは出力を所有するプライベートキーで署名されます。
 
-So it is very simple compared to other coinjoin systems.
+したがって、他のCoinjoinシステムに比べて非常に簡単なのです。
