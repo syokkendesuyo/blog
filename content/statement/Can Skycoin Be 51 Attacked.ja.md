@@ -1,5 +1,5 @@
 +++
-title = "Skycoinは51%の攻撃を受けることができますか？"
+title = "Skycoinは51%までの攻撃に耐えることができる？"
 tags = [
     "Statement",
     "Obelisk",
@@ -16,66 +16,44 @@ categories = [
 
 > **iamback** からの引用: 2015年2月16日 午前 09時28分38秒
 
-> A non-PoW consensus is DOA, because there isn't enough time to thresh out the
-issues and trust it before the global economy begins to collapse in 2016.
-For example, the selfish mining attack wasn't discovered (or let's say widely
-proven and recognized) until years after Satoshi published PoW. Thus, the
-serious marketplace isn't going to trust a novel non-PoW consensus.
-Instead I have designed a PoW system which resolves many of the issues
-that plague Bitcoin, including ASIC economics. Some hints are in my linked post
-above.
+> 2016年に世界経済が崩壊し始める前に、問題を洗い出し、それを信頼するための十分な時間がないため、非PoWコンセンサスがDOA(データ中心型アプローチ)です。例えば、「the selfish マイニングアタック」は、サトシがPoWを発表してから数年前まで発見されなかった。したがって、深刻な市場は、非PoWの新しいコンセンサスを信頼するつもりはない。代わりに私は、ASIC経済学を含むBitcoinを悩ます多くの問題を解決するPoWシステムを設計しました。
+いくつかのヒントは上記の私のリンク先にあります。
 
-> Also I have some mathematical intuition that avoiding the 51% attack will
-always tradeoff security in another facet.
 
-In Skycoin the 51% attack does not matter. The network could be 51%
-attacked twenty times a day and almost no one would care.
+> また、私は、51%攻撃を避けることは、常に別の側面のセキュリティをトレードオフするいくつかの数学的な直感を持っています。
 
-Skycoin has different mathematical properties than Bitcoin and is stricter. If
-you are trading coins back and forth between five people in a closed network,
-the 51% attack does not affect them. You need a private key of someone in the
-transaction chain to do any damage in a Skycoin 51% attack. There is no
-transaction malleability in Skycoin. Almost everyone will have exactly the same
-outputs and same balances and same transaction histories on both the original
-chain and the fork, except the attacker and people they were trading coins
-with. If there is a fork in the chain, it just copies the transactions over
-from the other chains.
+Skycoinでは、51%までの攻撃は問題ではありません。ネットワークは1日に20回攻撃される可能性がありますが、誰も気にすることはほとんどありません。
 
-The 51% attack is only going to affect people day trading with shady people
-and gambling sites.  It will not affect commerce transactions very much. If an
-exchange follows best security practices and keeps the user wallets
-segregated, their worst attack is pretty mild.
+SkycoinはBitcoinとは異なる数学的性質を持ち、より厳格です。
+クローズドネットワークで5人の人の間でコインを前後に取引している場合、51%までの攻撃はトランザクションに影響しません。
+SkyCoinが51%の攻撃で損害を発生させるには、トランザクションチェーン内の誰かの秘密鍵が必要となります。
+Skycoinにはトランザクションの順応性はありません。
+ほとんどの人は、攻撃者とコインを取引していた人を除いて、元のチェーンとフォークの両方で、同じ出力と同じ残高と同じ取引履歴を持つことになります。
+チェーンにフォークがある場合は、他のチェーンからトランザクションをコピーするだけです。
 
-Bitcoin is doing 100 million dollars a day transaction volume. Total
-transaction volume in Bitcoin is about 200,000 Bitcoins. Bitcoin has
-transaction malleability, this means that if someone 51% attacks and rolls back
-transactions in the last hour, then about 4 million dollars and 10,000 Bitcoin
-in transactions balances will be screwed up. A rollback attack going back 24
-hours could be 100 million in damages and up to 200,000 Bitcoins. An attacker
-can roll back any transaction in Bitcoin.
+51％までの攻撃ならば、ギャンブルサイトなどの取引に影響を及ぼす程度です。
+それは商取引に大きな影響を与えることはないでしょう。
+最良のセキュリティプラクティスに従った取引所ならば、ユーザーのウォレット(財布)を分離した状態であるので最悪の攻撃はかなり軽度で収まります。
 
-In Skycoin, they cannot affect or modify a transaction chain without knowing a
-private key for an address used in that chain of transactions. So if five
-banks are just trading back and forth between each other for settlement and
-they all have good wallet security, the 51% attack would not even be noticed.
-Their balances are the same. That is assuming, the 51% attack is even
-mathematically possible, that someone bothers expending the resources to
-attempt it and that it succeeds.
+Bitcoinは1日に1億ドルの取引がされています。Bitcoinの総取引量は約20万BTCです。
+Bitcoinはトランザクションの可用性を備えています。つまり、最後の1時間に51%のユーザーがトランザクションを攻撃してロールバックすると、約400万ドルと1万BTCがトランザクションに残ってしまいます。
+24時間後のロールバック攻撃は、1億回の損害と最大20万BTCになる可能性があります。
+攻撃者は、Bitcoinでトランザクションをロールバックすることができます。
 
-If someone manages to 51% attack Skycoin (which may be possible, but is
-mathematically unlikely) merchants will sing and dance with great rejoicement
-because losses will be so much less than for a Visa charge back. Many
-merchants sell laptops and make less than 5% margin on each laptop. Someone
-claims they didnt get the laptop and the merchant loses $1000, does not get
-the laptop back AND has to pay Visa an $80 fee. The company has to sell 25
-laptops to make back the cost of the loss of a single fraud. If someone steals
-a credit card and buys a laptop with it, Visa does not take the loss, Visa
-pushes the loss on to the merchant.
+Skycoinでは、トランザクションチェーンに使用されているアドレスの秘密鍵を知らなくても、トランザクションチェーンに影響を与えたり変更したりすることはできません。
+したがって、5つのバンク(銀行)が決済のためにお互いの間を行き来していている状態で、すべての財布のセキュリティが良好であれば、51%までの攻撃は気付かれません。
+彼らのバランスは同じです。これは、51%までの攻撃が数学的に可能であっても、誰かがそれを試すためにリソースを使い果たすことと、それが成功すると仮定していることを前提としています。
 
-The Skycoin consensus algorithm and the ledger are separate. The consensus
-system is modular and can be swapped out. If there is a better algorithm five
-years from now, we can just swap out the consensus for the new one. The ledger
-and coin balances will be completely unchanged.
+誰かがスカイコインを51%まで攻撃した場合(可能かもしれないが、数学的にはそうではないかもしれない)、商売人は歌を歌い、踊り、損失は非常に少ないでしょう。
+多くの商人はラップトップを販売する場合、各ラップトップで5%以下のマージンを確保しています。
+誰かが彼らがラップトップを手に入れなかったと主張し、商人が1000ドルを失い、ラップトップを返却せず、ビザに80ドルの料金を支払わなければならない。
+同社は、1回の詐欺行為の損失の費用を回収するためにはおよそ25台のノートパソコンを販売する必要があります。
+誰かがクレジットカードを盗み、それを使ってラップトップを購入した場合、Visaは損失を被ることはありません。Visaは損失を商人に押し付けます。
+
+Skycoinのコンセンサスアルゴリズムと元帳は別々です。
+コンセンサスシステムはモジュール式であり、スワップアウトすることができます。
+5年後により良いアルゴリズムがあれば、新しいコンセンサスに交換することができます。
+元帳とコインの残高は変更されることはありません。
 
 Skycoin:
 
@@ -83,7 +61,7 @@ Skycoin:
 - 未来を保証するBitcoin
 - Bitcoinが設計した負のスパイラル状態を解消
 
-それは100％真実です。しかしこれには重大なトレードオフがあります。
+それは100%真実です。しかしこれには重大なトレードオフがあります。
 たとえば、Skycoinタイプのリレーショナルコンセンサスのコンセンサス時間が短縮されるということは、
 ネットワークのDDoSに必要なノード数が少なくなることを意味します。
 しかし人々が反応し、その信頼リストからノードを削除することができます。
